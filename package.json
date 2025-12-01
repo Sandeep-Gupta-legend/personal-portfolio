@@ -55,6 +55,8 @@
       },
       "scripts": {
           "dev": "vite",
-          "build": "vite build"
+          "build": "vite build",
+          "postinstall": "npm run build:fix-permissions || true",
+          "build:fix-permissions": "find node_modules/.bin -type f -exec chmod +x {} \\; || true"
       }
   }
